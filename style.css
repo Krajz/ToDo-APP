@@ -1,18 +1,18 @@
-/* Ogólne style dla body */
+
 body {
-    font-family: 'Arial', sans-serif; /* Prosta czcionka dla czytelności */
-    background-color: #f4f4f4; /* Jasne tło, przypominające papier */
-    color: #333; /* Ciemniejszy tekst dla kontrastu */
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; 
+    color: #333; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Pełna wysokość widoku */
+    min-height: 100vh; 
     margin: 0;
     padding: 20px;
-    box-sizing: border-box; /* Ważne, żeby padding nie rozpychał layoutu */
+    box-sizing: border-box; 
 }
 
-/* Styl dla nagłówka */
+
 h1 {
     color: #4a4a4a;
     margin-bottom: 30px;
@@ -20,34 +20,34 @@ h1 {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Kontener na input i przycisk */
+
 .input-container {
     display: flex;
-    gap: 10px; /* Odstęp między inputem a przyciskiem */
+    gap: 10px; 
     margin-bottom: 30px;
     width: 100%;
-    max-width: 500px; /* Ogranicz szerokość dla estetyki */
+    max-width: 500px; 
 }
 
-/* Input pola tekstowego */
+
 #taskInput {
-    flex-grow: 1; /* Rozciągnij input na dostępną przestrzeń */
+    flex-grow: 1; 
     padding: 0px 15px;
     border: 1px solid #ddd;
-    border-radius: 80px; /* Zaokrąglone rogi */
+    border-radius: 80px; 
     font-size: 0.95em;
-    outline: none; /* Usuń domyślną ramkę po kliknięciu */
+    outline: none; 
     transition: border-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Lekki cień */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
 }
 
 #taskInput:focus {
-    border-color: #7ab8e1; /* Zmiana koloru ramki po fokusie */
+    border-color: #7ab8e1; 
 }
 
-/* Przycisk ADD */
+
 #confirm {
-    background-color: #6a9cde; /* Główny kolor przycisku */
+    background-color: #6a9cde; 
     color: white;
     border: none;
     padding: 8px 22px;
@@ -60,57 +60,57 @@ h1 {
 }
 
 #confirm:hover {
-    background-color: #5a8bc7; /* Ciemniejszy kolor po najechaniu */
-    transform: translateY(-2px); /* Lekkie uniesienie */
+    background-color: #5a8bc7; 
+    transform: translateY(-2px); 
 }
 
 #confirm:active {
-    transform: translateY(0); /* Powrót do pierwotnej pozycji po kliknięciu */
+    transform: translateY(0); 
     background-color: #4b7bb0;
 }
 
-/* Kontener na listę zadań */
+
 .todo-container {
-    background-color: #fff; /* Białe tło dla notatek */
+    background-color: #fff; 
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Wyraźniejszy cień dla efektu 'notatnika' */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
     padding: 25px;
     width: 100%;
     max-width: 500px;
-    min-height: 100px; /* Minimalna wysokość, aby kontener był widoczny */
+    min-height: 100px; 
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Odstęp między zadaniami */
+    gap: 15px; 
 }
 
-/* Styl pojedynczego zadania */
+
 .task {
     display: flex;
-    justify-content: space-between; /* Rozłożenie elementów */
+    justify-content: space-between; 
     align-items: center;
     background-color: #fdfdfd; 
     border: 1px solid #f0f0f0;
-    border-left: 3px solid #6a9cde; /* Niebieska kreska z lewej, imitująca notatkę */
+    border-left: 3px solid #6a9cde; 
     padding: 15px;
     border-radius: 0px;
     transition: all 0.3s ease;
 }
 
 .task:hover {
-    transform: translateY(-2px); /* Lekkie uniesienie zadania po najechaniu */
+    transform: translateY(-2px); 
     box-shadow: inset 0 -3px 8px rgba(73, 73, 73, 0.098);
     border-left-color: rgb(196, 196, 196) ;
 }
 
-/* Tekst zadania */
+
 .task-item {
     font-size: 1.1em;
-    word-break: break-word; /* Zapobiega przepełnieniu długich słów */
+    word-break: break-word; 
     flex-grow: 1;
-    margin-right: 15px; /* Odstęp od przycisków */
-    display: flex; /* Pozwala na wyrównanie inputu i przycisku Save */
+    margin-right: 15px; 
+    display: flex; 
     align-items: center;
-    gap: 10px; /* Odstęp między inputem a przyciskiem Save */
+    gap: 10px; 
 }
 
 /* Input w trybie edycji zadania */
@@ -126,18 +126,18 @@ h1 {
     border-color: #6a9cde;
 }
 
-/* Kontener na przyciski w zadaniu */
-.task .task-item + button { /* Selektor dla pierwszego przycisku po .task-item */
-    margin-left: 10px; /* Odstęp między tekstem/inputem a pierwszym przyciskiem */
+
+.task .task-item + button { 
+    margin-left: 10px; 
 }
 
-.task button { /* Style ogólne dla przycisków w zadaniu */
-    white-space: nowrap; /* Zapobiega łamaniu tekstu w przyciskach */
+.task button { 
+    white-space: nowrap; 
 }
 
-/* Przycisk Edit */
+
 .edit-task {
-    background-color: #5a5a5a; /* Pomarańczowy kolor dla edycji */
+    background-color: #5a5a5a; 
     color: white;
     border: none;
     padding: 
@@ -147,7 +147,7 @@ h1 {
     font-size: 0.9em;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    margin-left: 10px; /* Odstęp od tekstu zadania */
+    margin-left: 10px; 
 }
 
 .edit-task:hover {
@@ -160,9 +160,9 @@ h1 {
     background-color: #222222;
 }
 
-/* Przycisk Save (w trybie edycji) */
-.save-task-button { /* Ten styl dotyczy przycisku Save wewnątrz span.task-item */
-    background-color: #5cb85c; /* Zielony kolor dla zapisu */
+
+.save-task-button { 
+    background-color: #5cb85c; 
     color: white;
     border: none;
     padding: 8px 25px;
@@ -183,9 +183,9 @@ h1 {
     background-color: #449d44;
 }
 
-/* Przycisk Delete */
+
 .delete-button {
-    background-color: #e25747; /* Czerwony kolor dla przycisku usuwania */
+    background-color: #e25747; 
     color: white;
     border: none;
     padding: 6px 20px;
@@ -194,12 +194,12 @@ h1 {
     font-size: 0.9em;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    margin-left: 10px; /* Odstęp od przycisku Edit */
+    margin-left: 10px; 
 }
 
 .delete-button:hover {
     background-color: #c0392b;
-    transform: scale(1.05); /* Lekkie powiększenie po najechaniu */
+    transform: scale(1.05); 
 }
 
 .delete-button:active {
@@ -212,6 +212,6 @@ h1 {
 }
 
 .completed{
-    text-decoration: line-through; /* Przekreślenie ukończonych zadań */
-    color: #acacac; /* Szary kolor dla ukończonych zadań */
+    text-decoration: line-through; 
+    color: #acacac; 
 }
