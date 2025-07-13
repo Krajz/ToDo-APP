@@ -1,0 +1,217 @@
+/* Ogólne style dla body */
+body {
+    font-family: 'Arial', sans-serif; /* Prosta czcionka dla czytelności */
+    background-color: #f4f4f4; /* Jasne tło, przypominające papier */
+    color: #333; /* Ciemniejszy tekst dla kontrastu */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Pełna wysokość widoku */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Ważne, żeby padding nie rozpychał layoutu */
+}
+
+/* Styl dla nagłówka */
+h1 {
+    color: #4a4a4a;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Kontener na input i przycisk */
+.input-container {
+    display: flex;
+    gap: 10px; /* Odstęp między inputem a przyciskiem */
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px; /* Ogranicz szerokość dla estetyki */
+}
+
+/* Input pola tekstowego */
+#taskInput {
+    flex-grow: 1; /* Rozciągnij input na dostępną przestrzeń */
+    padding: 0px 15px;
+    border: 1px solid #ddd;
+    border-radius: 80px; /* Zaokrąglone rogi */
+    font-size: 0.95em;
+    outline: none; /* Usuń domyślną ramkę po kliknięciu */
+    transition: border-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Lekki cień */
+}
+
+#taskInput:focus {
+    border-color: #7ab8e1; /* Zmiana koloru ramki po fokusie */
+}
+
+/* Przycisk ADD */
+#confirm {
+    background-color: #6a9cde; /* Główny kolor przycisku */
+    color: white;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 80px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#confirm:hover {
+    background-color: #5a8bc7; /* Ciemniejszy kolor po najechaniu */
+    transform: translateY(-2px); /* Lekkie uniesienie */
+}
+
+#confirm:active {
+    transform: translateY(0); /* Powrót do pierwotnej pozycji po kliknięciu */
+    background-color: #4b7bb0;
+}
+
+/* Kontener na listę zadań */
+.todo-container {
+    background-color: #fff; /* Białe tło dla notatek */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Wyraźniejszy cień dla efektu 'notatnika' */
+    padding: 25px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 100px; /* Minimalna wysokość, aby kontener był widoczny */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Odstęp między zadaniami */
+}
+
+/* Styl pojedynczego zadania */
+.task {
+    display: flex;
+    justify-content: space-between; /* Rozłożenie elementów */
+    align-items: center;
+    background-color: #fdfdfd; 
+    border: 1px solid #f0f0f0;
+    border-left: 3px solid #6a9cde; /* Niebieska kreska z lewej, imitująca notatkę */
+    padding: 15px;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+}
+
+.task:hover {
+    transform: translateY(-2px); /* Lekkie uniesienie zadania po najechaniu */
+    box-shadow: inset 0 -3px 8px rgba(73, 73, 73, 0.098);
+    border-left-color: rgb(196, 196, 196) ;
+}
+
+/* Tekst zadania */
+.task-item {
+    font-size: 1.1em;
+    word-break: break-word; /* Zapobiega przepełnieniu długich słów */
+    flex-grow: 1;
+    margin-right: 15px; /* Odstęp od przycisków */
+    display: flex; /* Pozwala na wyrównanie inputu i przycisku Save */
+    align-items: center;
+    gap: 10px; /* Odstęp między inputem a przyciskiem Save */
+}
+
+/* Input w trybie edycji zadania */
+.edit-input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+}
+
+.editInput:focus {
+    border-color: #6a9cde;
+}
+
+/* Kontener na przyciski w zadaniu */
+.task .task-item + button { /* Selektor dla pierwszego przycisku po .task-item */
+    margin-left: 10px; /* Odstęp między tekstem/inputem a pierwszym przyciskiem */
+}
+
+.task button { /* Style ogólne dla przycisków w zadaniu */
+    white-space: nowrap; /* Zapobiega łamaniu tekstu w przyciskach */
+}
+
+/* Przycisk Edit */
+.edit-task {
+    background-color: #5a5a5a; /* Pomarańczowy kolor dla edycji */
+    color: white;
+    border: none;
+    padding: 
+    6px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-left: 10px; /* Odstęp od tekstu zadania */
+}
+
+.edit-task:hover {
+    background-color: #464646;
+    transform: scale(1.05);
+}
+
+.edit-task:active {
+    transform: scale(1);
+    background-color: #222222;
+}
+
+/* Przycisk Save (w trybie edycji) */
+.save-task-button { /* Ten styl dotyczy przycisku Save wewnątrz span.task-item */
+    background-color: #5cb85c; /* Zielony kolor dla zapisu */
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.task-item button:hover {
+    background-color: #4cae4c;
+    transform: scale(1.05);
+}
+
+.task-item button:active {
+    transform: scale(1);
+    background-color: #449d44;
+}
+
+/* Przycisk Delete */
+.delete-button {
+    background-color: #e25747; /* Czerwony kolor dla przycisku usuwania */
+    color: white;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-left: 10px; /* Odstęp od przycisku Edit */
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05); /* Lekkie powiększenie po najechaniu */
+}
+
+.delete-button:active {
+    transform: scale(1);
+    background-color: #a93226;
+}
+.task-item{
+    text-transform: capitalize;
+    margin-left: 10px;
+}
+
+.completed{
+    text-decoration: line-through; /* Przekreślenie ukończonych zadań */
+    color: #acacac; /* Szary kolor dla ukończonych zadań */
+}
